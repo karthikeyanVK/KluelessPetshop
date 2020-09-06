@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "PetShop.Products": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 34811,
+      "useSSL": false
+    }
+  }
+}
