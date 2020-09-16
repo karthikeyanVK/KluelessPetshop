@@ -13,7 +13,7 @@ namespace SaveOrders
 {
     public static class Orders
     {
-        [FunctionName(" ")]
+        [FunctionName("SaveOrders")]
         public static async Task<bool> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req)
         {
