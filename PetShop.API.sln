@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.DBAccess", "PetShop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Business", "PetShop.Business\PetShop.Business.csproj", "{654B897E-7CD6-4307-849D-C4D926DBAD90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Orders", "PetShop.Orders\PetShop.Orders.csproj", "{9D8DFD0E-F97F-4F9C-AE2A-28258C419449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Orders", "PetShop.Orders\PetShop.Orders.csproj", "{9D8DFD0E-F97F-4F9C-AE2A-28258C419449}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Products", "PetShop.Products\PetShop.Products.csproj", "{24809A36-B212-42CE-A5BA-19BDE456E171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Database", "PetShop.Database\PetShop.Database.csproj", "{8A2AAF68-317F-4DC7-A1D5-17B0F7E5C012}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{24809A36-B212-42CE-A5BA-19BDE456E171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24809A36-B212-42CE-A5BA-19BDE456E171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24809A36-B212-42CE-A5BA-19BDE456E171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2AAF68-317F-4DC7-A1D5-17B0F7E5C012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2AAF68-317F-4DC7-A1D5-17B0F7E5C012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2AAF68-317F-4DC7-A1D5-17B0F7E5C012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2AAF68-317F-4DC7-A1D5-17B0F7E5C012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,9 +8,7 @@ using System;
 using System.Collections.Generic;
 
 using System.Linq;
-using PetShop.DBAccess;
-using PetShop.Model;
-using Order = PetShop.DBAccess.DataModel.Order;
+using PetShop.Database;
 using Product = PetShop.Model.Product;
 
 namespace PetShop.Business
@@ -35,7 +33,7 @@ namespace PetShop.Business
 
         public bool AddProduct(Product product)
         {
-            var dbProduct = new DBAccess.DataModel.Product
+            var dbProduct = new Database.Product
             {
  
                 ProductId = product.ProductId == Guid.Empty ? Guid.NewGuid() : product.ProductId,

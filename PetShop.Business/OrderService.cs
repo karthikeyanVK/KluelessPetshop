@@ -6,8 +6,8 @@
 
 using System;
 
-using PetShop.DBAccess;
-using Order = PetShop.DBAccess.DataModel;
+using PetShop.Database;
+using Order = PetShop.Database;
 
 namespace PetShop.Business
 {

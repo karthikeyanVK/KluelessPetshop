@@ -8,7 +8,8 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["PetShop.Products/PetShop.Products.csproj", "PetShop.Products/"]
 COPY ["PetShop.Business/PetShop.Business.csproj", "PetShop.Business/"]
-COPY ["PetShop.DBAccess/PetShop.DBAccess.csproj", "PetShop.DBAccess/"]
+COPY ["PetShop.Database/PetShop.Database.csproj", "PetShop.Database/"]
+
 COPY ["PetShop.Model/PetShop.Model.csproj", "PetShop.Model/"]
 RUN dotnet restore "PetShop.Products/PetShop.Products.csproj"
 COPY . .
