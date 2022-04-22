@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using PetShop.DBAccess;
 using Swashbuckle.AspNetCore.Swagger;
@@ -27,29 +28,29 @@ namespace PetShop.API
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
-
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(options =>
-            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            
+        { 
             services.AddDbContext<PetShopContext>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
-                {
-                    Version = "v1",
-                    Title = "PetShop API",
-                    Description = "Petshop App",
-                    TermsOfService = "None",
-                    Contact = new Contact()
-                        {Name = "Petshop", Email = "PetShop@meetup.com", Url = "www.chazurepetshop.com"}
-                });
+
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PetShop API", Description = "Petshop App", Version = "v1", Contact = new OpenApiContact() { Name = "Petshop", Email = "PetShop@meetup.com" } });
+                 
             });
 
-        }
+            // CorsPolicy
+            services.AddCors(options =>
+            { 
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
 
+            //services.AddControllers();
+            services.AddControllers();
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        } 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             
@@ -57,16 +58,21 @@ namespace PetShop.API
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
-            app.UseMvc();
+            app.UseHttpsRedirection();
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My PetShop V1");
+            });
+
+            //CorePolicy
+            app.UseCors("CorsPolicy");
+            app.UseRouting(); 
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
             });
         }
     }
