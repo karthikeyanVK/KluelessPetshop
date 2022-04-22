@@ -26,7 +26,7 @@ namespace PetShop.DBAccess
         {
             //optionsBuilder.UseSqlServer(_configuration.GetValue<string>("DbConnectionString:DefaultConnection"));
             optionsBuilder.UseSqlServer(
-                "Server=tcp:kedaworkshop.database.windows.net,1433;Initial Catalog=petshop2019;Persist Security Info=False;User ID=petshop2019;Password=BGSoXD7138EQ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=0;");
+                "Server=tcp:aksworkshop.database.windows.net,1433;Initial Catalog=petshop;Persist Security Info=False;User ID=aksworkshop;Password=BGSoXD7138EQ;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
